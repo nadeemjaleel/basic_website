@@ -14,7 +14,7 @@ export function SuperAttractiveHackathon() {
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
 
   useEffect(() => {
-    const countdownDate = new Date("2024-10-19T09:00:00").getTime()
+    const countdownDate = new Date("2024-10-26T09:00:00").getTime()
 
     const timer = setInterval(() => {
       const now = new Date().getTime()

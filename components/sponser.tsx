@@ -77,6 +77,11 @@ const FadingSparkle = ({ delay }: { delay: number }) => {
 }
 
 export default function StunningSponsorPage() {
+  const sponsors = [
+    { name: "CosmicLife", image: "/images/1.png"},
+    { name: "SYSTALENT", image: "/images/2.png"},
+    { name: "Archon", image: "/images/3.png"}
+  ]
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -123,6 +128,30 @@ export default function StunningSponsorPage() {
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
             Sponsor Innov8X
           </h1>
+          <div className="w-full  p-4 sm:p-8 flex items-center justify-center">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-white">Our Sponsors</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {sponsors.map((sponsor, index) => (
+            <Card 
+              key={index} 
+              className="backdrop-blur-md bg-white bg-opacity-20 border border-opacity-30 border-white rounded-xl overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 hover:bg-opacity-30"
+            >
+              <CardContent className="p-4 sm:p-6">
+                <div className="">
+                  <img
+                    src={sponsor.image}
+                    alt={`${sponsor.name} logo`}
+                    className="w-full h-24 sm:h-32 object-contain"
+                  />
+                </div>
+                <h3 className="text-lg sm:text-xl font-semibold text-center text-white">{sponsor.name}</h3>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Join us in shaping the future of technology. Your support ignites innovation.
           </p>
